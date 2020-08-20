@@ -6,7 +6,7 @@ const KnowledgeDots = ({ title, level }) => {
     .fill(undefined)
     .map((_, i) => i < level)
     .map((shouldFill) => <KnowledgeCircle fill={shouldFill} />);
-  console.log(circleComponents);
+
   return (
     <KnowledgeWrapper>
       <KnowledgeTitle>{title.toUpperCase()}</KnowledgeTitle>
@@ -23,7 +23,7 @@ const KnowledgeWrapper = styled.div`
   margin: 10px 0px;
 `;
 const KnowledgeTitle = styled.div`
-  min-width: 20vw;
+  min-width: 10vw;
   font-size: 20px;
 `;
 const KnowledgeCircleWrapper = styled.div`

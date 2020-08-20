@@ -1,46 +1,18 @@
 import React from "react";
 import styled from "styled-components";
 
+import Section from "./components/Section";
 import Separator from "./components/Separator";
 import KnowledgeDots from "./components/KnowledgeDots";
 
 import { TITLE_COLOR } from "./constants";
-
+import { EXPERIENCE, EDUCATION } from "./data";
+import { markdownUrl } from "./regex";
 const contactInfo = {
   website: "khnzed.com",
   mobile: "+374 (94) 049427",
   email: "edgar.khanzadian@gmail.com",
 };
-
-const jobs = [
-  {
-    position: "Front-end developer",
-    company: "Better.gg",
-    place: "Yerevan, Armenia",
-    dates: "March 2020 - August 2020",
-    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-    veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-    commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-    velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-    occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-    mollit anim id est laborum.`,
-  },
-  {
-    position: "Front-end developer",
-    company: "Better.gg",
-    place: "Yerevan, Armenia",
-    dates: "March 2020 - August 2020",
-    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-    veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-    commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-    velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-    occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-    mollit anim id est laborum.`,
-  },
-];
-
 const App = () => {
   const contactInfoComponents = Object.keys(contactInfo).map((contactTitle) => (
     <ContactInfoBox>
@@ -48,17 +20,7 @@ const App = () => {
       <ContactInfoValue>{contactInfo[contactTitle]}</ContactInfoValue>
     </ContactInfoBox>
   ));
-  const jobComponents = jobs.map((job) => (
-    <JobWrapper>
-      <JobDetails>
-        <JobPosition>{job.position.toUpperCase()}</JobPosition>
-        <JobCompany>{job.company}</JobCompany>
-        <JobPlace>{job.place}</JobPlace>
-        <JobDates>{job.dates}</JobDates>
-      </JobDetails>
-      <JobBody>{job.description}</JobBody>
-    </JobWrapper>
-  ));
+
   return (
     <AppWrapper>
       <Header>
@@ -66,22 +28,21 @@ const App = () => {
         <TitleDescriptionWrapper>
           <DeveloperName>Edgar Khanzadian</DeveloperName>
           <DeveloperDescription>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
+            I am a motivated developer with a huge desire to contribute to
+            Armenian tech industry! In love with functional programming. Trying
+            to read as many programming books and articles as possible. I lived
+            in Russia for 18 years and then I moved to Armenia. I am a student
+            of American University of Armenia (2016 - 2020).
           </DeveloperDescription>
         </TitleDescriptionWrapper>
       </Header>
       <Separator title="Experience" />
-      <Section>{jobComponents}</Section>
+      <Section type="experience" dataArr={EXPERIENCE} />
       <Separator title="Education" />
-      <Section>{jobComponents}</Section>
+      <Section type="education" dataArr={EDUCATION} />
       <Separator title="Tech Stack" />
       <KnowledgeDots title="ReactJS" level={4} />
+      <KnowledgeDots title="React Native" level={4} />
       <KnowledgeDots title="GraphQL" level={4} />
       <KnowledgeDots title="NodeJS" level={3} />
       <Separator title="Language" />
@@ -127,34 +88,11 @@ const TitleDescriptionWrapper = styled.div``;
 const DeveloperName = styled.div`
   color: ${TITLE_COLOR};
   font-size: 30px;
-`;
-
-const DeveloperDescription = styled.div``;
-
-const Section = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
-const JobWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  margin-top: 10px;
   margin-bottom: 20px;
 `;
 
-const JobDetails = styled.div`
-  display: flex;
-  flex-direction: column;
-  min-width: 20vw;
-  font-family: Ubuntu-Light;
+const DeveloperDescription = styled.div`
+  line-height: 1.5;
 `;
-
-const JobPosition = styled.div``;
-const JobCompany = styled.div``;
-const JobPlace = styled.div``;
-const JobDates = styled.div``;
-
-const JobBody = styled.div``;
 
 export default App;
