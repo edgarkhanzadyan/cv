@@ -5,7 +5,7 @@ import Section from "./components/Section";
 import Separator from "./components/Separator";
 import KnowledgeDots from "./components/KnowledgeDots";
 
-import { TITLE_COLOR } from "./constants";
+import { TITLE_COLOR, GREEN, DARK_GREEN } from "./constants";
 import { EXPERIENCE, EDUCATION } from "./data";
 import { markdownUrl } from "./regex";
 const contactInfo = {
@@ -59,6 +59,13 @@ const AppWrapper = styled.div`
   width: 100vw;
   padding: 7vw 14vw;
   box-sizing: border-box;
+
+  a {
+    color: ${DARK_GREEN};
+    &:visited {
+      color: ${GREEN};
+    }
+  }
 `;
 
 const Header = styled.div`

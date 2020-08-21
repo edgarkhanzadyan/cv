@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { markdownUrl } from "../regex";
 
 
-
 const StringWithLinks = ({ children: receivedString }) => {
   const matches = receivedString.matchAll(markdownUrl);
   let descriptionComponents = [];
@@ -17,6 +16,11 @@ const StringWithLinks = ({ children: receivedString }) => {
     );
     pivot = match.index + match[0].length;
   }
+  descriptionComponents.push(
+    <SimpleText>
+      {receivedString.substring(pivot, receivedString.length)}
+    </SimpleText>
+  );
   return <>{descriptionComponents}</>;
 };
 

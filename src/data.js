@@ -4,14 +4,34 @@ export const EXPERIENCE = [
     company: "Better.gg",
     place: "Yerevan, Armenia",
     dates: "March 2020 - August 2020",
-    description: `I was  developing the mobile application with React Native and website with ReactJS. Basically, I did work on every part of the application: navigation, connection to the server, design, storage, etc.`,
+    description: `I was  developing the mobile application with React Native and website with ReactJS. Basically, I did work on every part of the application: navigation, connection to the server, design, storage, etc. `,
+    sections: [
+      {
+        name: "Accomplishments",
+        sectionData: [
+          `Helped to get the application to production release on IOS.`,
+          `Used GraphQL to fetch data from the server.`,
+          `Created an admin website for application content creators.`,
+        ],
+      },
+      {
+        name: "Languages",
+        sectionData: [`Javascript (React Native)`, `Objective-C (IOS)`],
+      },
+    ],
   },
   {
     position: "Front-end developer",
     company: "WICASTR Limited",
     place: "Yerevan, Armenia",
     dates: "Oct 2019 - July 2020",
-    description: ``,
+    description: `Responsible to implement the user interface of the viciniti family of products, and lead front-end developer for WICASTR outsourcing projects.`,
+    sections: [
+      {
+        name: "Languages",
+        sectionData: [`Javascript (ReactJS)`],
+      },
+    ],
   },
   {
     position: "Front-end developer",
@@ -22,7 +42,7 @@ export const EXPERIENCE = [
     sections: [
       {
         name: "Languages",
-        sectionData: [`Javascript (ReactJS)`],
+        sectionData: [`Javascript (ReactJS)`, `Python`],
       },
     ],
   },
@@ -31,7 +51,13 @@ export const EXPERIENCE = [
     company: "Sololearn",
     place: "Yerevan, Armenia",
     dates: "Feb 2018 - Mar 2018",
-    description: ``,
+    description: `I was working on the website refactoring as a front-end developer.`,
+    sections: [
+      {
+        name: "Languages",
+        sectionData: [`Javascript (ReactJS)`],
+      },
+    ],
   },
   {
     position: "React Native / NodeJS developer",
@@ -72,7 +98,15 @@ export const EXPERIENCE = [
     company: "Iterate hackerspace",
     place: "Yerevan, Armenia",
     dates: "2016 - now",
-    description: `Developing programmers community, teaching and learning programming!`,
+    description: `Developing programmers community, teaching and learning programming!\nBelow you can find links to some of our workshops`,
+    sections: [{
+      name: "Links to workshops",
+      sectionData: [
+        `[Primitive types and variable initialization](https://www.facebook.com/groups/iterate/?post_id=636213313215953)`,
+        `[UNIX history and shell programming](https://www.facebook.com/groups/iterate/?post_id=792323737604909)`,
+        `[Basics with python](https://www.facebook.com/groups/iterate/?post_id=789094184594531)`,
+      ],
+    }],
   },
 ];
 

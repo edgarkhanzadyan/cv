@@ -26,7 +26,9 @@ const experienceMapFunction = (job) => {
         {sec.sectionData.map((sd) => (
           <SectionData>
             <Dot />
-            <SectionDataText>{sd}</SectionDataText>
+            <SectionDataText>
+              <StringWithLinks>{sd}</StringWithLinks>
+            </SectionDataText>
           </SectionData>
         ))}
       </SectionDataWrapper>
@@ -81,7 +83,9 @@ const TypeDetailsWrapper = styled.div`
   min-width: 20vw;
   font-family: Ubuntu-Light;
 `;
-const TypeBody = styled.div``;
+const TypeBody = styled.div`
+  line-height: 1.5;
+`;
 const TypeDetail = styled.div``;
 
 const JobWrapper = styled(TypeWrapper)``;

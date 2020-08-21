@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
+import { GREEN, DARK_GREEN } from "../constants";
+
 const KnowledgeDots = ({ title, level }) => {
   const circleComponents = new Array(5)
     .fill(undefined)
@@ -32,11 +34,11 @@ const KnowledgeCircleWrapper = styled.div`
   flex-wrap: wrap;
 `;
 const KnowledgeCircle = styled.div`
-  background-color: ${(props) => (props.fill ? "#4CA16B" : "#5F5F63")};
+  background-color: ${(props) => (props.fill ? GREEN : DARK_GREEN)};
   width: 30px;
   height: 30px;
   border-radius: 15px;
-  margin: 0px 4px; 
+  margin: 0px 4px;
 `;
 
 export default KnowledgeDots;
