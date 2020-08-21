@@ -4,20 +4,23 @@ import styled from "styled-components";
 import Section from "./components/Section";
 import Separator from "./components/Separator";
 import KnowledgeDots from "./components/KnowledgeDots";
+import StringWithLinks from "./components/StringWithLinks";
 
 import { TITLE_COLOR, GREEN, DARK_GREEN } from "./constants";
 import { EXPERIENCE, EDUCATION } from "./data";
 import { markdownUrl } from "./regex";
 const contactInfo = {
-  website: "khnzed.com",
-  mobile: "+374 (94) 049427",
-  email: "edgar.khanzadian@gmail.com",
+  website: "[khnzed.com](http://khnzed.com)",
+  mobile: "[+374 (94) 049427](tel:+37494049427)",
+  email: "[edgar.khanzadian@gmail.com](mailto:edgar.khanzadian@gmail.com)",
 };
 const App = () => {
   const contactInfoComponents = Object.keys(contactInfo).map((contactTitle) => (
     <ContactInfoBox>
       <ContactInfoTitle>{contactTitle.toUpperCase()}</ContactInfoTitle>
-      <ContactInfoValue>{contactInfo[contactTitle]}</ContactInfoValue>
+      <ContactInfoValue>
+        <StringWithLinks>{contactInfo[contactTitle]}</StringWithLinks>
+      </ContactInfoValue>
     </ContactInfoBox>
   ));
 
