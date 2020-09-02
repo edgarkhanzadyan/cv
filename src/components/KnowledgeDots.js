@@ -23,6 +23,9 @@ const KnowledgeWrapper = styled.div`
   justify-content: flex-start;
   align-items: center;
   margin: 10px 0px;
+  @media (max-width: 1200px) {
+    flex-direction: column;
+  }
 `;
 const KnowledgeTitle = styled.div`
   min-width: 10vw;

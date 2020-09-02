@@ -75,15 +75,28 @@ const Header = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
+  @media (max-width: 1200px) {
+    flex-direction: column-reverse;
+  }
 `;
 
 const ContactInfoWrapper = styled.div`
   min-width: 20vw;
+  display: flex;
+  flex-direction: column;
+  @media (max-width: 1200px) {
+    margin-top: 20px;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 `;
 const ContactInfoBox = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
+  @media (max-width: 1200px) {
+    margin-right: 30px;
+  }
 `;
 const ContactInfoTitle = styled.div`
   color: ${TITLE_COLOR};
