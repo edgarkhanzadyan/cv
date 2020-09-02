@@ -38,7 +38,7 @@ export const EXPERIENCE = [
     company: "CryptoNDX",
     place: "Yerevan, Armenia",
     dates: "Sep 2018 - Oct 2018",
-    description: ``,
+    description: `Creating landing page for the company`,
     sections: [
       {
         name: "Languages",
